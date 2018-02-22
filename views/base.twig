@@ -1,0 +1,100 @@
+{% extends 'templates/app.twig' %}
+
+{% block main %}
+
+    <head>
+        <meta charset="utf-8">
+        <title>Chess</title>
+        <style>
+            #FenInDiv {
+                position: relative;
+                left: 60px;
+            }
+
+            #fenIn {
+                width: 480px;
+                left: 60px;
+            }
+
+            #Board {
+                position: relative;
+                top: 20px;
+                left: 60px;
+                width: 480px;
+                height: 480px;
+                border-style: solid;
+                border-width: 2px;
+            }
+
+            #EngineOutput {
+                position: absolute;
+                left: 600px;
+                top: 250px;
+            }
+
+            .Square {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+            }
+
+            .Dark {
+                background-color: #850014;
+            }
+
+            .Light {
+                background-color: #fe0d13;
+            }
+
+            .SqSelected {
+                background-color: #360007;
+            }
+
+            .rank0 { top: 420px; }
+            .rank1 { top: 360px; }
+            .rank2 { top: 300px; }
+            .rank3 { top: 240px; }
+            .rank4 { top: 180px; }
+            .rank5 { top: 120px; }
+            .rank6 { top: 60px; }
+            .rank7 { top: 0px; }
+
+            .file0 { left: 0px; }
+            .file1 { left: 60px; }
+            .file2 { left: 120px; }
+            .file3 { left: 180px; }
+            .file4 { left: 240px; }
+            .file5 { left: 300px; }
+            .file6 { left: 360px; }
+            .file7 { left: 420px; }
+
+            .Piece {
+                position:absolute;
+            }
+
+        </style>
+    </head>
+    <body>
+    <header>
+        <h3>JS Chess</h3>
+    </header>
+    <div id="FenInDiv">
+        button:<br/>
+
+        <button type="button" id="SetFen">useless BUtton</button>
+    </div>
+    <div id="Board">
+    </div>
+
+
+
+
+    <script src="../public/js/pieces/piece.js"></script>
+    <script src="../public/js/pieces/pawn.js"></script>
+    <script src="../public/js/jquery-3.3.1.min.js"></script>
+    <script src="../public/js/game.js"></script>
+    <script src="../public/js/buttons.js"></script>
+    </body>
+
+
+{% endblock %}
