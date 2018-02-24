@@ -85,9 +85,20 @@
     </div>
     <div id="Board">
     </div>
-
-
-
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBmSEcFpJhdn1iBxG1qrL33ZqKUzxvtjxc",
+            authDomain: "chess-4fbca.firebaseapp.com",
+            databaseURL: "https://chess-4fbca.firebaseio.com",
+            projectId: "chess-4fbca",
+            storageBucket: "chess-4fbca.appspot.com",
+            messagingSenderId: "922401375964"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+    </script>
     <script src="../public/js/pieces/pieceFactory.js"></script>
     <script src="../public/js/pieces/piece.js"></script>
     <script src="../public/js/pieces/pawn.js"></script>

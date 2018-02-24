@@ -11,12 +11,18 @@ $(function() {
     startGame();
 
 });
-function startGame(){
+function setup(){
 
-    makeBoard();
+
     ClearAllPieces();
     initBoardSquares();
     initBoardPieces();
+
+}
+function startGame(){
+    makeBoard();
+    setup();
+
 }
 
 function jsonTOBoard(json){
@@ -57,13 +63,28 @@ function makeBoard() {
 function move(piece, to){
 
     piece.move(to,board);
-    ClearAllPieces();
-    initBoardSquares();
-    initBoardPieces();
-
-
+    setup();
+    firebase();
 }
 
+function firebase(){
+
+   database.ref('tv/update').transaction(
+        function (update) {
+            return (update || 0) + 1;
+        }
+    );
+    database.ref('tv/date').transaction(
+        function (date) {
+            var options = {
+                weekday: "long", year: "numeric", month: "short",
+                day: "numeric", hour: "2-digit", minute: "2-digit"
+            };
+            return (new Date()).toLocaleDateString("en-NZ", options);
+        }
+    );
+
+}
 function ClearAllPieces() {
     $(".Piece").remove();
 }
