@@ -21,7 +21,8 @@ class pawn extends piece{
 
         //capture
         if(to[Y] - this.location[Y] == 1 && Math.abs(to[X] - this.location[X]) == 1){
-            if(!board[to[X]][to[Y]] == 0){
+
+            if(board[to[X]][to[Y]] != 0 && board[to[X]][to[Y]].colour != this.colour){
                 return true;
             }else{
                 return false;

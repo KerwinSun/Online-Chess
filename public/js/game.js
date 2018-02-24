@@ -48,8 +48,8 @@ function makeBoard() {
 
     }
      wp1 = new pawn("w", [0,1]); board[0][1] = wp1;
-     bp1 = new pawn("b", [0,7]); board[0][7] = bp1;
-     bp1 = new pawn("b", [1,7]); board[1][7] = bp1;
+     bp1 = new pawn("w", [0,7]); board[0][7] = bp1;
+     bp1 = new pawn("w", [1,7]); board[1][7] = bp1;
 
 
 }
