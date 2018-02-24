@@ -18,6 +18,22 @@ function startGame(){
     initBoardSquares();
     initBoardPieces();
 }
+
+function jsonTOBoard(json){
+
+    var v = JSON.parse(json);
+
+    for(var i = 0; i < v.length; i++) {
+        for(var j = 0; j < v[i].length; j++) {
+            if(v[i][j] != 0){
+                var tempPiece = pieceFactory(v[i][j].type);
+                v[i][j] = Object.assign(tempPiece, v[i][j]);
+            };
+        }
+    }
+    console.log(v);
+}
+
 function makeBoard() {
 
     for(x=0; x<FILES; x++) {
@@ -32,8 +48,8 @@ function makeBoard() {
 
     }
      wp1 = new pawn("w", [0,1]); board[0][1] = wp1;
-     bp1 = new pawn("b", [0,3]); board[0][7] = bp1;
-     bp1 = new pawn("b", [0,3]); board[1][7] = bp1;
+     bp1 = new pawn("b", [0,7]); board[0][7] = bp1;
+     bp1 = new pawn("b", [1,7]); board[1][7] = bp1;
 
 
 }
@@ -99,9 +115,7 @@ function initBoardPieces() {
                 rankName = "rank"+y;
                 fileName = "file"+x;
                 pieceFileName = "/public/js/images/"+piece.colour+"_"+piece.constructor.name+".png";
-                console.log(pieceFileName);
                 imageString = "<image src=\"" + pieceFileName + "\" class=\"Piece " + rankName + " " + fileName + "\"/>";
-                console.log(imageString);
                 $("#Board").append(imageString);
             }
 

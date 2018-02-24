@@ -1,13 +1,8 @@
-var pieceSelected = false;
-var squareSelected = false;
 var currentPiece = null;
-var square;
 
 $("#SetFen").click(function () {
 
-
-    console.log(!currentPiece);
-    console.log(board[x][y] != 0);
+    jsonTOBoard(JSON.stringify(board));
 });
 
 function ClickedSquare(pageX, pageY) {
@@ -31,6 +26,7 @@ function ClickedSquare(pageX, pageY) {
     }else {
 
         move(currentPiece, [x, y]);
+        currentPiece = null;
 
     }
 
@@ -55,5 +51,4 @@ $(document).on('click','.Square', function (e) {
     deSelectSq();
     ClickedSquare(e.pageX, e.pageY);
     currentPiece = null;
-    pieceSelected = false;
 });

@@ -3,6 +3,7 @@ class piece {
     constructor(colour, location) {
         this.colour = colour;
         this.location = location;
+        this.type = this.constructor.name;
     }
 
     checkBounds(to){
