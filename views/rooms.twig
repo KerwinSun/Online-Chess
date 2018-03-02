@@ -1,0 +1,43 @@
+{% extends 'templates/app.twig' %}
+
+{% block main %}
+    </head>
+    <body>
+    <header>
+        <h3>JS Chess rooms</h3>
+    </header>
+    <div id="FenInDiv">
+        <p>
+        Create Game<br>
+        <input type="text" id="roomName" name="firstname"><br>
+        <button type="button" id="SetFen">Create</button>
+        <br>
+        </p>
+    </div>
+    
+    <div id="roomList">
+        Loading....
+    </div>
+    <script src="../public/js/jquery-3.3.1.min.js"></script>
+    <script src="../public/js/game.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBmSEcFpJhdn1iBxG1qrL33ZqKUzxvtjxc",
+            authDomain: "chess-4fbca.firebaseapp.com",
+            databaseURL: "https://chess-4fbca.firebaseio.com",
+            projectId: "chess-4fbca",
+            storageBucket: "chess-4fbca.appspot.com",
+            messagingSenderId: "922401375964"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+    </script>
+    <script src="../public/js/pieces/piece.js"></script>
+    <script src="../public/js/pieces/pawn.js"></script>
+    <script src="../public/js/createRoom.js"></script>
+    </body>
+
+
+{% endblock %}

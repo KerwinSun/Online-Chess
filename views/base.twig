@@ -76,7 +76,10 @@
     </head>
     <body>
     <header>
-        <h3>JS Chess</h3>
+        <h3>
+            JS Chess <br>
+            Room: {{roomName}}
+        </h3>
     </header>
     <div id="FenInDiv">
         button:<br/>
@@ -85,6 +88,7 @@
     </div>
     <div id="Board">
     </div>
+    <script src="../public/js/jquery-3.3.1.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -99,10 +103,14 @@
         firebase.initializeApp(config);
         var database = firebase.database();
     </script>
+    <script>
+    
+    var roomName = "{{roomName}}";
+    
+    </script>
     <script src="../public/js/pieces/pieceFactory.js"></script>
     <script src="../public/js/pieces/piece.js"></script>
     <script src="../public/js/pieces/pawn.js"></script>
-    <script src="../public/js/jquery-3.3.1.min.js"></script>
     <script src="../public/js/game.js"></script>
     <script src="../public/js/buttons.js"></script>
     </body>
